@@ -1,0 +1,25 @@
+{
+  "name": "healthhacks22",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "tracker"
+  ],
+  "scripts": {
+    "start": "cd backend && yarn && node app.js",
+    "heroku-postbuild": "cd frontend && yarn --production=false && yarn run build",
+    "dev": "concurrently -i \"cd backend && yarn dev\" \"cd frontend && yarn start\" \"cd tracker && yarn start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  },
+  "dependencies": {
+    "python-shell": "^3.0.1",
+    "typeface-montserrat": "^1.1.13"
+  }
+}
